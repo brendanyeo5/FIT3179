@@ -4,7 +4,7 @@
   "height": 600,
   "title": "2020 Global Happiness Score and Life Expectancy",
   "data": {
-    "url": "https://raw.githubusercontent.com/brendanyeo5/FIT3179/main/homework2/data/2020.csv"
+    "url": "https://raw.githubusercontent.com/brendanyeo5/FIT3179/main/homework3/data/2020.csv"
   },
   "params": [
     {
