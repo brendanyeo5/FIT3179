@@ -24,7 +24,7 @@
   "encoding": {
     "color": {
       "field": "Ladder",
-      "type": "quantitative",
+      "type": "quantitative"
     },
     "tooltip": [
       {"field": "properties.NAME", "type": "nominal", "title": "Country"},
