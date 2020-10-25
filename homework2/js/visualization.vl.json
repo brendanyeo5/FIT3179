@@ -109,8 +109,8 @@
         },
         "tooltip": [
           {"field": "Country", "type": "nominal"},
-          {"field": "Ladder", "type": "quantitative", "format": ".2f"},
-          {"field": "LifeExpectancy", "type": "quantitative", "format": ".2f"}
+          {"field": "Ladder", "type": "quantitative", "format": ".2f", "title": "Score"},
+          {"field": "LifeExpectancy", "type": "quantitative", "format": ".2f", "title": "Life Expectancy"}
         ]
       }
     },
@@ -135,8 +135,8 @@
         },
         "tooltip": [
           {"field": "Country", "type": "nominal"},
-          {"field": "Ladder", "type": "quantitative", "format": ".2f"},
-          {"field": "LifeExpectancy", "type": "quantitative", "format": ".2f"}
+          {"field": "Ladder", "type": "quantitative", "format": ".2f", "title": "Score"},
+          {"field": "LifeExpectancy", "type": "quantitative", "format": ".2f", "title": "Life Expectancy"}
         ]
       }
     }
