@@ -15,8 +15,8 @@
         "data": {
           "url": "https://raw.githubusercontent.com/brendanyeo5/FIT3179/main/homework/data/2020.csv"
         },
-        "key": "Country name",
-        "fields": ["Ladder score"]
+        "key": "Country",
+        "fields": ["Ladder"]
       }
     }
   ],
@@ -25,11 +25,10 @@
     "color": {
       "field": "Ladder score",
       "type": "quantitative",
-      "scale": {"type": "log"}
     },
     "tooltip": [
       {"field": "properties.NAME", "type": "nominal", "title": "Country"},
-      {"field": "Ladder score", "type": "quantitative"}
+      {"field": "Ladder", "type": "quantitative", "title": "Score", "format": ".2f"}
     ]
   },
   "config": {}
