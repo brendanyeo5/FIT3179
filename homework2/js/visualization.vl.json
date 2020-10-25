@@ -1,0 +1,145 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 800,
+  "height": 600,
+  "title": "2020 Global Happiness Score and Life Expectancy",
+  "data": {
+    "url": "https://raw.githubusercontent.com/brendanyeo5/FIT3179/main/homework2/data/2020.csv"
+  },
+  "params": [
+    {
+      "name": "Region_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Central and Eastern Europe",
+          "Commonwealth of Independent States",
+          "East Asia",
+          "Latin America and Caribbean",
+          "Middle East and North Africa",
+          "North America and ANZ",
+          "South Asia",
+          "Southeast Asia",
+          "Sub-Saharan Africa",
+          "Western Europe"
+        ],
+        "labels": [
+          "Show All",
+          "Central and Eastern Europe",
+          "Commonwealth of Independent States",
+          "East Asia",
+          "Latin America and Caribbean",
+          "Middle East and North Africa",
+          "North America and ANZ",
+          "South Asia",
+          "Southeast Asia",
+          "Sub-Saharan Africa",
+          "Western Europe"
+        ],
+        "name": "Region Selection: "
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "datum.Ladder > 0"},
+    {"filter": "datum.LifeExpectancy > 0"},
+    {"filter": "Region_selection == null || datum.Region == Region_selection"}
+  ],
+  "encoding": {
+    "x": {
+      "field": "Ladder",
+      "type": "quantitative",
+      "title": "World Happiness Score",
+      "axis": {"tickCount": 10},
+      "scale": {"domain": [0, 10]}
+    },
+    "y": {
+      "field": "LifeExpectancy",
+      "type": "quantitative",
+      "title": "Life Expectancy",
+      "axis": {"tickCount": 8},
+      "scale": {"domain": [0, 80]}
+    }
+  },
+  "layer": [
+    {
+      "selection": {
+        "region_highlight": {
+          "type": "multi",
+          "fields": ["Region"],
+          "bind": "legend"
+        }
+      },
+      "mark": "circle",
+      "encoding": {
+        "color": {
+          "field": "Region",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Central and Eastern Europe",
+              "Commonwealth of Independent States",
+              "East Asia",
+              "Latin America and Caribbean",
+              "Middle East and North Africa",
+              "North America and ANZ",
+              "South Asia",
+              "Southeast Asia",
+              "Sub-Saharan Africa",
+              "Western Europe"
+            ],
+            "range": [
+              "#a6cee3",
+              "#1f78b4",
+              "#b2df8a",
+              "#33a02c",
+              "#fb9a99",
+              "#e31a1c",
+              "#fdfb6f",
+              "#ff7f00",
+              "#cab2d6",
+              "#6a3d9a"
+            ]
+          }
+        },
+        "opacity": {
+          "condition": {"selection": "region_highlight", "value": 0.9},
+          "value": 0.2
+        },
+        "tooltip": [
+          {"field": "Country", "type": "nominal"},
+          {"field": "Ladder", "type": "quantitative", "format": ".2f"},
+          {"field": "LifeExpectancy", "type": "quantitative", "format": ".2f"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "middle",
+        "dx": -12,
+        "fontSize": 11.5,
+        "fontStyle": "italic"
+      },
+      "encoding": {
+        "text": {"field": "Country", "type": "nominal"},
+        "color": {"value": "black"},
+        "opacity": {
+          "condition": {
+            "test": "datum['Country'] == 'China' || datum['Country'] == 'Afghanistan' || datum['Country'] == 'Australia' || datum['Country'] == 'Central African Republic' || datum['Country'] == 'Hong Kong S.A.R. of China' ||  datum['Country'] == 'United States'",
+            "value": 1
+          },
+          "value": 0
+        },
+        "tooltip": [
+          {"field": "Country", "type": "nominal"},
+          {"field": "Ladder", "type": "quantitative", "format": ".2f"},
+          {"field": "LifeExpectancy", "type": "quantitative", "format": ".2f"}
+        ]
+      }
+    }
+  ],
+  "config": {}
+}
