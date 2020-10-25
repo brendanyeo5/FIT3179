@@ -5,7 +5,7 @@
   "height": 600,
   "projection": {"type": "equirectangular"},
   "data": {
-    "url": "https://raw.githubusercontent.com/brendanyeo5/FIT3179/main/homework/js/ne_110m.json",
+    "url": "https://raw.githubusercontent.com/brendanyeo5/FIT3179/main/homework3/js/ne_110m.json",
     "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
   },
   "transform": [
@@ -13,7 +13,7 @@
       "lookup": "properties.NAME",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/brendanyeo5/FIT3179/main/homework/data/2020.csv"
+          "url": "https://raw.githubusercontent.com/brendanyeo5/FIT3179/main/homework3/data/2020.csv"
         },
         "key": "Country",
         "fields": ["Ladder"]
