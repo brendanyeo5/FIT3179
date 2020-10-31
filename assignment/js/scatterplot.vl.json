@@ -14,28 +14,28 @@
         "options": [
           null,
           "Central and Eastern Europe",
+          "Western Europe",
           "Commonwealth of Independent States",
-          "East Asia",
-          "Latin America and Caribbean",
           "Middle East and North Africa",
-          "North America and ANZ",
+          "Sub-Saharan Africa",
+          "East Asia",
           "South Asia",
           "Southeast Asia",
-          "Sub-Saharan Africa",
-          "Western Europe"
+          "Latin America and Caribbean",
+          "North America and ANZ"
         ],
         "labels": [
           "Show All",
           "Central and Eastern Europe",
+          "Western Europe",
           "Commonwealth of Independent States",
-          "East Asia",
-          "Latin America and Caribbean",
           "Middle East and North Africa",
-          "North America and ANZ",
+          "Sub-Saharan Africa",
+          "East Asia",
           "South Asia",
           "Southeast Asia",
-          "Sub-Saharan Africa",
-          "Western Europe"
+          "Latin America and Caribbean",
+          "North America and ANZ"
         ],
         "name": "Region Selection: "
       }
@@ -71,33 +71,47 @@
           "bind": "legend"
         }
       },
-      "mark": "circle",
+      "mark": {
+        "type": "circle",
+        "size": 45,
+        "stroke": "black",
+        "strokeWidth": 0.5
+      },
       "encoding": {
         "color": {
           "field": "Region",
           "type": "nominal",
+          "legend": {
+            "legendX": 490,
+            "legendY": 310,
+            "orient": "none",
+            "labelFontSize": 15,
+            "labelLimit": 300,
+            "titleFontSize": 20,
+            "symbolStrokeWidth": 1
+          },
           "scale": {
             "domain": [
               "Central and Eastern Europe",
+              "Western Europe",
               "Commonwealth of Independent States",
-              "East Asia",
-              "Latin America and Caribbean",
               "Middle East and North Africa",
-              "North America and ANZ",
+              "Sub-Saharan Africa",
+              "East Asia",
               "South Asia",
               "Southeast Asia",
-              "Sub-Saharan Africa",
-              "Western Europe"
+              "Latin America and Caribbean",
+              "North America and ANZ"
             ],
             "range": [
-              "#a6cee3",
+              "#0acbee",
               "#1f78b4",
+              "#fb9a99",
               "#b2df8a",
               "#33a02c",
-              "#fb9a99",
-              "#e31a1c",
-              "#fdfb6f",
+              "#fec44f",
               "#ff7f00",
+              "#e31a1c",
               "#cab2d6",
               "#6a3d9a"
             ]
@@ -109,8 +123,18 @@
         },
         "tooltip": [
           {"field": "Country", "type": "nominal"},
-          {"field": "Ladder", "type": "quantitative", "format": ".2f", "title": "Score"},
-          {"field": "LifeExpectancy", "type": "quantitative", "format": ".2f", "title": "Life Expectancy"}
+          {
+            "field": "Ladder",
+            "type": "quantitative",
+            "format": ".2f",
+            "title": "Score"
+          },
+          {
+            "field": "LifeExpectancy",
+            "type": "quantitative",
+            "format": ".2f",
+            "title": "Life Expectancy"
+          }
         ]
       }
     },
@@ -128,15 +152,25 @@
         "color": {"value": "black"},
         "opacity": {
           "condition": {
-            "test": "datum['Country'] == 'China' || datum['Country'] == 'Afghanistan' || datum['Country'] == 'Australia' || datum['Country'] == 'Central African Republic' || datum['Country'] == 'Hong Kong S.A.R. of China' ||  datum['Country'] == 'United States'",
+            "test": "datum['Country'] == 'China' || datum['Country'] == 'Afghanistan' || datum['Country'] == 'Singapore' || datum['Country'] == 'India' || datum['Country'] == 'South Sudan' || datum['Country'] == 'Australia' || datum['Country'] == 'Central African Republic' || datum['Country'] == 'Hong Kong S.A.R. of China' ||  datum['Country'] == 'United States'",
             "value": 1
           },
           "value": 0
         },
         "tooltip": [
           {"field": "Country", "type": "nominal"},
-          {"field": "Ladder", "type": "quantitative", "format": ".2f", "title": "Score"},
-          {"field": "LifeExpectancy", "type": "quantitative", "format": ".2f", "title": "Life Expectancy"}
+          {
+            "field": "Ladder",
+            "type": "quantitative",
+            "format": ".2f",
+            "title": "Score"
+          },
+          {
+            "field": "LifeExpectancy",
+            "type": "quantitative",
+            "format": ".2f",
+            "title": "Life Expectancy"
+          }
         ]
       }
     }
