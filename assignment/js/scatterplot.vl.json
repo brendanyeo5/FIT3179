@@ -69,7 +69,8 @@
           "type": "multi",
           "fields": ["Region"],
           "bind": "legend"
-        }
+        },
+        "grid": {"type": "interval", "bind": "scales"}
       },
       "mark": {
         "type": "circle",
