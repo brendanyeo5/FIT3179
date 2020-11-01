@@ -50,7 +50,8 @@
         "tooltip": [
           {"field": "Country", "type": "nominal"},
           {"field": "Region", "type": "nominal"},
-          {"field": "Unemployment", "type": "quantitative", "title": "Unemployment Rate (%)"}
+          {"field": "Unemployment", "type": "quantitative", "title": "Unemployment Rate (%)"},
+          {"field": "UnemploymentRank", "type": "quantitative", "title": "Rank"}
         ]
       },
       "selection": {"click": {"field": "Country", "type": "multi"}},
@@ -100,7 +101,8 @@
         "tooltip": [
           {"field": "Country", "type": "nominal"},
           {"field": "Region", "type": "nominal"},
-          {"field": "GDPperCap", "type": "quantitative", "title": "GDP per Capita (PPP)", "format": ","}
+          {"field": "GDPperCap", "type": "quantitative", "title": "GDP per Capita (PPP)", "format": ","},
+          {"field": "GDPRank", "type": "quantitative", "title": "Rank"}
         ]
       },
       "selection": {"click": {"field": "Country", "type": "multi"}},
