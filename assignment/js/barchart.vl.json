@@ -1,0 +1,110 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": "container",
+  "height": 2000,
+  "data": {"url": "https://raw.githubusercontent.com/brendanyeo5/FIT3179/main/assignment/data/economic_freedom_index.csv"},
+  "transform": [
+    {"filter": "datum.Unemployment > 0"}
+  ],
+  "hconcat": [
+    {
+      "title": "Unemployment Rate by Country",
+      "mark": "bar",
+      "encoding": {
+        "y": {
+          "field": "Country",
+          "type": "nominal",
+          "sort": {
+            "field": "Unemployment",
+            "op": "average",
+            "order": "ascending"
+          }
+        },
+        "x": {
+          "field": "Unemployment",
+          "type": "quantitative",
+          "title": "Unemployment Rate (%)",
+          "scale": {"domain": [0, 30]}
+        },
+        "color": {
+          "field": "Region",
+          "type": "nominal",
+          "legend": null,
+          "scale": {
+            "domain": [
+              "Asia-Pacific",
+              "Europe",
+              "Middle East and North Africa",
+              "Sub-Saharan Africa",
+              "Americas"
+            ],
+            "range": [
+              "#ff7f00",
+              "#0acbee",
+              "#b2df8a",
+              "#33a02c",
+              "#6a3d9a"
+            ]
+          }
+        },
+        "tooltip": [
+          {"field": "Country", "type": "nominal"},
+          {"field": "Region", "type": "nominal"},
+          {"field": "Unemployment", "type": "quantitative", "title": "Unemployment Rate (%)"}
+        ]
+      },
+      "selection": {"click": {"field": "Country", "type": "multi"}},
+      "transform": [{"filter": {"selection": "click"}}]
+    },
+    {
+      "title": "GDP per Capita by Country",
+      "mark": "bar",
+      "encoding": {
+        "y": {
+          "field": "Country",
+          "type": "nominal",
+          "title": null,
+          "sort": {
+            "field": "GDPperCap",
+            "op": "average",
+            "order": "descending"
+          }
+        },
+        "x": {
+          "field": "GDPperCap",
+          "type": "quantitative",
+          "title": "GDP per Capita (PPP)",
+          "scale": {"domain": [0, 150000]}
+        },
+        "color": {
+          "field": "Region",
+          "type": "nominal",
+          "legend": null,
+          "scale": {
+            "domain": [
+              "Asia-Pacific",
+              "Europe",
+              "Middle East and North Africa",
+              "Sub-Saharan Africa",
+              "Americas"
+            ],
+            "range": [
+              "#ff7f00",
+              "#0acbee",
+              "#b2df8a",
+              "#33a02c",
+              "#6a3d9a"
+            ]
+          }
+        },
+        "tooltip": [
+          {"field": "Country", "type": "nominal"},
+          {"field": "Region", "type": "nominal"},
+          {"field": "GDPperCap", "type": "quantitative", "title": "GDP per Capita (PPP)", "format": ","}
+        ]
+      },
+      "selection": {"click": {"field": "Country", "type": "multi"}},
+      "transform": [{"filter": {"selection": "click"}}]
+    }
+  ]
+}
