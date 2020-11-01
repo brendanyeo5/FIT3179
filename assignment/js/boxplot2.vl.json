@@ -1,0 +1,65 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": "Life Expectancy in 2020 by Region",
+  "width": 400,
+  "height": 300,
+  "data": {
+    "url": "https://raw.githubusercontent.com/brendanyeo5/FIT3179/main/assignment/data/2020.csv"
+  },
+  "mark": {"type": "boxplot", "extent": "min-max"},
+  "encoding": {
+    "y": {
+      "field": "Region",
+      "type": "nominal",
+      "sort": [
+        "Central and Eastern Europe",
+        "Western Europe",
+        "Commonwealth of Independent States",
+        "Middle East and North Africa",
+        "Sub-Saharan Africa",
+        "East Asia",
+        "South Asia",
+        "Southeast Asia",
+        "Latin America and Caribbean",
+        "North America and ANZ"
+      ]
+    },
+    "color": {
+      "field": "Region",
+      "type": "nominal",
+      "legend": null,
+      "scale": {
+        "domain": [
+          "Central and Eastern Europe",
+          "Western Europe",
+          "Commonwealth of Independent States",
+          "Middle East and North Africa",
+          "Sub-Saharan Africa",
+          "East Asia",
+          "South Asia",
+          "Southeast Asia",
+          "Latin America and Caribbean",
+          "North America and ANZ"
+        ],
+        "range": [
+          "#0acbee",
+          "#1f78b4",
+          "#fb9a99",
+          "#b2df8a",
+          "#33a02c",
+          "#fec44f",
+          "#ff7f00",
+          "#e31a1c",
+          "#cab2d6",
+          "#6a3d9a"
+        ]
+      }
+    },
+    "x": {
+      "field": "LifeExpectancy",
+      "type": "quantitative",
+      "title": "Life Expectancy",
+      "scale": {"zero": false}
+    }
+  }
+}
