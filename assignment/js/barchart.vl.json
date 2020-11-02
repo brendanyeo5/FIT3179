@@ -5,7 +5,10 @@
   "data": {
     "url": "https://raw.githubusercontent.com/brendanyeo5/FIT3179/main/assignment/data/economic_freedom_index.csv"
   },
-  "transform": [{"filter": "datum.Unemployment > 0"}, {"filter": "datum.GDPperCap > 0"}],
+  "transform": [
+    {"filter": "datum.Unemployment > 0"},
+    {"filter": "datum.GDPperCap > 0"}
+  ],
   "hconcat": [
     {
       "title": "Unemployment Rate by Country",
@@ -63,6 +66,7 @@
           "field": "Country",
           "type": "nominal",
           "title": null,
+          "axis": {"labelLimit": 100},
           "sort": {"field": "GDPperCap", "op": "average", "order": "descending"}
         },
         "x": {
