@@ -11,6 +11,7 @@
     "y": {
       "field": "Region",
       "type": "nominal",
+      "title": null,
       "sort": [
         "Central and Eastern Europe",
         "Western Europe",
